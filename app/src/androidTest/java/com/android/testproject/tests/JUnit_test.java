@@ -1,22 +1,23 @@
 package com.android.testproject.tests;
 import android.test.ActivityInstrumentationTestCase2;
-import com.android.testproject.MainActivity;
 import android.widget.TextView;
+
+import com.android.testproject.MyActivity;
 import com.android.testproject.R;
 
 
-public class JUnit_test extends ActivityInstrumentationTestCase2<MainActivity>{
+public class JUnit_test extends ActivityInstrumentationTestCase2<MyActivity>{
 
-    MainActivity mainActivity;
+    MyActivity myActivity;
 
     public JUnit_test(){
-        super(MainActivity.class);
+        super(MyActivity.class);
 
     }
 
     public void test_first(){
-        mainActivity = getActivity();
-        TextView textView = (TextView) mainActivity.findViewById(R.id.tv1);
+        myActivity = getActivity();
+        TextView textView = (TextView) myActivity.findViewById(R.id.tv1);
         String tester = textView.getText().toString();
 
         assertEquals("Bye World", tester);
